@@ -27,7 +27,7 @@ const AddTopic = () => {
       });
 
       if (res.ok) {
-        router.push("/");
+        return router.push("/", undefined, { shallow: true });
       } else {
         throw new Error("Failed to create a topic");
       }
