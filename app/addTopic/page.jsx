@@ -1,9 +1,10 @@
 "use client";
 
-import React, { useState } from "react";
+import { useState } from "react";
 import { useRouter } from "next/navigation";
 
-const AddTopic = () => {
+
+export default function AddTopic() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
 
@@ -27,7 +28,7 @@ const AddTopic = () => {
       });
 
       if (res.ok) {
-        return router.push("/", undefined, { shallow: true });
+        router.push("/");
       } else {
         throw new Error("Failed to create a topic");
       }
@@ -39,17 +40,18 @@ const AddTopic = () => {
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-3">
       <input
-        type="text"
         onChange={(e) => setTitle(e.target.value)}
         value={title}
         className="border border-slate-500 px-8 py-2"
+        type="text"
         placeholder="Topic Title"
       />
+
       <input
-        type="text"
         onChange={(e) => setDescription(e.target.value)}
         value={description}
         className="border border-slate-500 px-8 py-2"
+        type="text"
         placeholder="Topic Description"
       />
 
@@ -61,6 +63,4 @@ const AddTopic = () => {
       </button>
     </form>
   );
-};
-
-export default AddTopic;
+}

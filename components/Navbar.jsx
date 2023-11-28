@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import { FcPlus } from "react-icons/fc";
 
 const Navbar = () => {
   return (
@@ -11,7 +12,7 @@ const Navbar = () => {
         href={"/addTopic"}
         className="bg-orange-50 p-2 rounded-xl font-semibold text-blue-500-800"
       >
-        Add Topic
+        <FcPlus size={28} />
       </Link>
     </nav>
   );

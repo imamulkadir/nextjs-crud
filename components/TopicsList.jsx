@@ -1,6 +1,6 @@
 import Link from "next/link";
 import RemoveBtn from "./RemoveBtn";
-import { IoMdCreate } from "react-icons/io";
+import { FcEngineering } from "react-icons/fc";
 
 const getTopics = async () => {
   try {
@@ -36,7 +36,7 @@ export default async function TopicsList() {
           <div className="flex gap-2">
             <RemoveBtn id={t._id} />
             <Link href={`/editTopic/${t._id}`}>
-              <IoMdCreate size={28} />
+              <FcEngineering size={28} />
             </Link>
           </div>
         </div>
